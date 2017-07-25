@@ -1,0 +1,69 @@
+.nav-buttons{
+  margin-left: 600px;
+}
+
+.logout{
+  margin-left: 690px;
+}
+
+section {
+  float: left;
+  width: 70%;
+  border: 1px solid darkgray;
+  padding: 20px;
+}
+
+.main-club-img{
+  width: 600px;
+  height: 300px;
+}
+
+.club-word-description{
+  width: 150px;
+}
+
+.floor-plan{
+  margin-left: 200px;
+  position: relative;
+  bottom: 130px
+}
+
+.floor-plan-img{
+  width: 400px;
+  height: 200px;
+}
+
+.bookit {
+  position: fixed;
+  left: 700px;
+  float: right;
+  width: 30%;
+  margin: 50px;
+}
+
+.bottle-selection{
+  font-size: 12px;
+  /*margin-top: 10px;*/
+}
+
+.dropdown-thing{
+  position: relative;
+  right: 17px;
+  width: 250px;
+}
+
+.dropdown-inside{
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.book-btn1{
+  position: relative;
+  bottom: 300px;
+  left: 250px;
+  border-radius: 10px;
+  border-color: blue;
+  background-color: blue;
+  width: 60px;
+  height: 30px;
+}

@@ -1,0 +1,23 @@
+section {
+  position: fixed;
+  left: 700px;
+  float: right;
+  width: 30%;
+  margin: 50px;
+}
+
+.bottle-selection{
+  font-size: 12px;
+  /*margin-top: 10px;*/
+}
+
+.dropdown-thing{
+  position: relative;
+  right: 17px;
+  width: 250px;
+}
+
+.dropdown-inside{
+  margin-right: 10px;
+  margin-left: 10px;
+}
