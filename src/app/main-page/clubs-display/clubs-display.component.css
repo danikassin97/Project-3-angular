@@ -3,19 +3,40 @@
 }
 
 .logout{
-  margin-left: 690px;
+  margin-left: 600px;
+  border-color: white;
+  color: purple;
 }
 
+/*section{
+  width: 100%;
+}*/
+
 section {
+  background-image: url('../../../assets/images/main-pic.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   float: left;
-  width: 70%;
+  width: 100%;
   border: 1px solid darkgray;
   padding: 20px;
+  color: white
+}
+/*nav{
+  position: fixed;
+  width: 100%;
+  bottom: 560px;
+  right: 3px;
+}*/
+
+nav{
+  background-color: white;
+  /*color: purple;*/
 }
 
 .main-club-img{
-  width: 600px;
-  height: 300px;
+  width: 400px;
+  height: 200px;
 }
 
 .club-word-description{
@@ -23,19 +44,23 @@ section {
 }
 
 .floor-plan{
-  margin-left: 200px;
-  position: relative;
-  bottom: 130px
+  /*margin-left: 200px;*/
+  /*position: relative;*/
+  /*bottom: 130px*/
+  margin-top: 20px;
 }
 
 .floor-plan-img{
-  width: 400px;
-  height: 200px;
+  width: 600px;
+  height: 300px;
+  display: inline-block;
+  border: 1px solid lightgray
 }
 
 .bookit {
   position: fixed;
   left: 700px;
+  top: 80px;
   float: right;
   width: 30%;
   margin: 50px;
@@ -59,11 +84,76 @@ section {
 
 .book-btn1{
   position: relative;
-  bottom: 300px;
-  left: 250px;
-  border-radius: 10px;
+  bottom: 210px;
+  left: 145px;
   border-color: blue;
   background-color: blue;
-  width: 60px;
-  height: 30px;
+  width: 59px;
+  height: 28px;
 }
+
+.book-btn2{
+  position: relative;
+  bottom: 178px;
+  left: 283px;
+  border-color: blue;
+  background-color: blue;
+  width: 59px;
+  height: 28px;
+}
+
+.book-btn3{
+  position: relative;
+  bottom: 97px;
+  left: 155px;
+  border-color: blue;
+  background-color: blue;
+  width: 59px;
+  height: 27px;
+}
+
+.club-display-top{
+
+  display: inline-block;
+}
+
+.club-info{
+  float: left;
+  margin-left: 108px;
+  margin-top: 50px;
+  /*border-right: 1px solid lightgray;*/
+  width: 630px;
+}
+
+.book-table{
+  background-color: green;
+  color: white;
+  border-color: green;
+
+}
+
+.reservations-link{
+  color: white;
+  width:180px;
+  position: relative;
+  top: 9px;
+}
+
+.main-pic{
+  background-size: cover;
+  background-image: url("../../../assets/images/main-pic.png");
+  width: 1200px;
+  height: 580px;
+}
+
+.nav-bg{
+  background-color: white;
+}
+
+.btn-primary{
+  background-color: white
+}
+
+/*.bg-primary{
+  background-color: white
+}*/

@@ -1,0 +1,123 @@
+
+.nav-buttons{
+  margin-left: 600px;
+}
+
+.logout{
+  margin-left: 600px;
+}
+
+section {
+  float: left;
+  width: 70%;
+  border: 1px solid darkgray;
+  padding: 20px;
+}
+
+.main-club-img{
+  width: 400px;
+  height: 200px;
+}
+
+.club-word-description{
+  width: 150px;
+}
+
+.floor-plan{
+  /*margin-left: 200px;*/
+  /*position: relative;*/
+  /*bottom: 130px*/
+  margin-top: 20px;
+}
+
+.floor-plan-img{
+  width: 600px;
+  height: 300px;
+  display: inline-block;
+  border: 1px solid lightgray
+}
+
+.bookit {
+  position: fixed;
+  left: 700px;
+  float: right;
+  width: 30%;
+  margin: 50px;
+}
+
+.bottle-selection{
+  font-size: 12px;
+  /*margin-top: 10px;*/
+}
+
+.dropdown-thing{
+  position: relative;
+  right: 17px;
+  width: 250px;
+}
+
+.dropdown-inside{
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.book-btn1{
+  position: relative;
+  bottom: 210px;
+  left: 145px;
+  /*border-radius: 10px;*/
+  border-color: blue;
+  background-color: blue;
+  width: 59px;
+  height: 28px;
+}
+
+.club-display-top{
+
+  display: inline-block;
+}
+
+.club-info{
+  float: left;
+  margin-left: 108px;
+  margin-top: 50px;
+  /*border-right: 1px solid lightgray;*/
+  width: 630px;
+}
+
+.book-table{
+  background-color: green;
+  color: white;
+  border-color: green;
+
+}
+
+.reservations-link{
+  color: white;
+  width:180px;
+  position: relative;
+  top: 9px;
+}
+
+.cancel-res{
+  background-color: red;
+  border-color: red;
+  color: white;
+  border-radius: 50px;
+}
+
+.res-info{
+  float: right;
+  position: relative;
+  left: 230px;
+  bottom: 235px;
+  border-left: 1px solid lightgray;
+  padding-left: 30px;
+}
+
+section{
+  width: 100%;
+  background-image: url('../../../assets/images/main-pic.png');
+  background-repeat: no-repeat;
+  background-size: cover
+}

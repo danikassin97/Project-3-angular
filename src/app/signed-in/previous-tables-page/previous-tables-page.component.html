@@ -1,3 +1,151 @@
-<p>
-  previous-tables-page works!
-</p>
+<!-- IF LOGGED IN -->
+
+<div *ngIf='isLoggedOut !== true'>
+  <nav class="navbar navbar-toggleable-md navbar-dark bg-primary">
+      <div class="container">
+          <button class="navbar-toggler navbar-toggler-right"
+          type="button" data-toggle="collapse" data-target="#navbarNav1"
+          aria-controls="navbarNav1" aria-expanded="false"
+          aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="/">
+              <strong style="color: white;">ClubRes</strong>
+          </a>
+          <div class="collapse navbar-collapse" id="navbarNav1">
+
+              <button (click)='doLogout()'
+              class=" btn btn-primary nav-link nav-item logout"> Logout </button>
+
+              <a class="navbar-brand navbar-link nav-item" href="/previously-booked">
+                  <p class="reservations-link" style="font-size: 1rem;">My Current Reservations</p>
+              </a>
+          </div>
+      </div>
+  </nav>
+</div>
+
+<section>
+
+<div class="container">
+<h1 style="position: relative; top: 30px;"> Reservations List </h1>
+<br>
+<div>
+  <div *ngFor="let reservation of reservations" style="margin-top: 20px; border-top: 3px solid black">
+    <br>
+    <h6> {{ reservation.createdAt | date: 'yyyy-MM-dd HH:mm' }} </h6>
+    <h3> {{ reservation.clubRes.clubName }} </h3>
+    <div>
+      <div class="row">
+        <div class="col-md-5">
+    <div class="club-display-top">
+
+    <img class="main-club-img" [src]="reservation.clubRes.clubImage">
+  </div>
+  </div>
+  <div class="col-md-6" style="padding-left: 40px; position: relative; bottom: 20px;">
+
+    <br>
+    <span><b>Address:</b> <br>{{ reservation.clubRes.clubAddress }} </span>
+    <br>
+    <br>
+    <span><b>Music: </b> <br>{{ reservation.clubRes.clubMusic }} </span>
+    <br>
+    <br>
+    <span><b>Description: </b> <br>{{ reservation.clubRes.clubDescription }} </span>
+  </div>
+</div>
+</div>
+
+<div class="col-md-6">
+  <h5>Bottles Purchased:</h5>
+  <div *ngFor="let oneBottle of reservation.bottles">
+    <span> {{ oneBottle.bottleName }}: </span>
+    <span> ${{ oneBottle.bottlePrice }} </span>
+
+  </div>
+  <hr>
+  <span> Total: ${{ reservation.total }} </span>
+
+  <br>
+  <br>
+  <button class="cancel-res" (click)="deleteRes(reservation._id, reservation)"> Cancel Reservation </button>
+</div>
+
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+
+<!-- <h1> Reservation List </h1>
+
+<div *ngFor="let reservation of reservations">
+
+
+
+  <h3>{{ reservation.clubRes.clubName }} </h3>
+
+  <h4>Bottles:</h4>
+<div *ngFor="let bottle of reservation.bottles">
+
+ <span>{{ bottle.bottleName }}</span>
+ <span>{{ bottle.bottlePrice }}</span>
+</div>
+</div>
+ -->
+<!--
+<div class="club-info">
+<h1> Reservations List </h1>
+<br>
+<div>
+  <div *ngFor="let reservation of reservations" style="margin-top: 20px;">
+    <h6> {{ reservation.createdAt | date: 'yyyy-MM-dd HH:mm' }} </h6>
+    <h3> {{ reservation.clubRes.clubName }} </h3>
+    <div>
+      <div class="row">
+        <div class="col-md-5">
+    <div class="club-display-top">
+
+    <img class="main-club-img" [src]="reservation.clubRes.clubImage">
+  </div>
+  </div>
+  <div class="col-md-6" style="padding-left: 160px; margin-bottom: 20px; position: relative; bottom: 20px;">
+
+    <br>
+    <span><b>Address:</b> <br>{{ reservation.clubRes.clubAddress }} </span>
+    <br>
+    <br>
+    <span><b>Music: </b> <br>{{ reservation.clubRes.clubMusic }} </span>
+    <br>
+    <br>
+    <span><b>Description: </b> <br>{{ reservation.clubRes.clubDescription }} </span>
+  </div>
+</div>
+</div>
+
+<div class="res-info">
+  <h5>Bottles Purchased:</h5>
+  <div *ngFor="let oneBottle of reservation.bottles">
+    <span> {{ oneBottle.bottleName }}: </span>
+    <span> ${{ oneBottle.bottlePrice }} </span>
+
+  </div>
+  <hr>
+  <span> Total: ${{ reservation.total }} </span>
+
+  <br>
+  <br>
+  <button class="cancel-res" (click)="deleteRes(reservation._id)"> Cancel Reservation </button>
+</div>
+
+  </div>
+</div>
+
+</div> -->
+
+</section>

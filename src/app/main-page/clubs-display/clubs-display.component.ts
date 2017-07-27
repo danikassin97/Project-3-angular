@@ -20,6 +20,7 @@ isLoggedOut: boolean = false;
 
 fullNameValue: string;
 emailValue: string;
+phoneNumValue: number;
 usernameValue: string;
 passwordValue: string;
 
@@ -52,8 +53,24 @@ total: Number = 0;
 
 newRes: any = {
   bottles: [],
-  total: ''
+  total: '',
+  clubInfo: ''
 }
+
+updatedStuff: any = {
+  id: '',
+  tableAmount: undefined
+}
+
+isButton1Pressed: boolean = false;
+isButton2Pressed: boolean = false;
+isButton3Pressed: boolean = false;
+
+isButton1Booked: boolean = false;
+isButton2Booked: boolean = false;
+isButton3Booked: boolean = false;
+
+// loginMessage: any = alert('Please Log In')
 
   constructor(
     private club: ReservationsService,
@@ -72,8 +89,6 @@ newRes: any = {
         this.isLoggedOut = true;
       })
       this.allClubs();
-
-      this.allTables();
 
   }
 
@@ -109,10 +124,13 @@ newRes: any = {
   // SIGN UP
 
   doSignUp(){
-      this.auth.signup(this.fullNameValue, this.emailValue, this.usernameValue, this.passwordValue)
+    console.log("hello")
+
+      this.auth.signup(this.fullNameValue, this.emailValue, this.phoneNumValue, this.usernameValue, this.passwordValue)
         .then((resultsFromApi) => {
           this.fullNameValue = "";
           this.emailValue = "";
+          this.phoneNumValue = undefined;
           this.usernameValue = "";
           this.passwordValue = "";
           this.signupErrorMessage = "";
@@ -120,6 +138,7 @@ newRes: any = {
           this.routerThing.navigate(['/'])
         })
         .catch((err) => {
+          console.log("hello")
           const parsedError = err.json();
           this.signupErrorMessage = parsedError.message
         });
@@ -149,16 +168,49 @@ newRes: any = {
 // --------------------- BOOKING --------------------
 
 
-toggleThatInput(club){
+toggleThatInput1(club){
     if(this.amIBooking === true){
       this.amIBooking = false;
+      this.isButton1Pressed = false;
     }
     else{
       this.amIBooking = true;
+      this.isButton1Pressed = true;
+
     }
 
     this.currentClub = club;
   }
+
+  toggleThatInput2(club){
+      if(this.amIBooking === true){
+        this.amIBooking = false;
+        this.isButton2Pressed = false;
+
+      }
+      else{
+        this.amIBooking = true;
+        this.isButton2Pressed = true;
+
+      }
+
+      this.currentClub = club;
+    }
+
+    toggleThatInput3(club){
+        if(this.amIBooking === true){
+          this.amIBooking = false;
+          this.isButton3Pressed = false;
+
+        }
+        else{
+          this.amIBooking = true;
+          this.isButton3Pressed = true;
+
+        }
+
+        this.currentClub = club;
+      }
 
     allTables(){
         this.club.getTables()
@@ -227,16 +279,33 @@ toggleThatInput(club){
 
 // SAVE RESERVATION
 
-saveReservation(){
+saveReservation(id){
+  if(this.isButton1Pressed === true){
+    this.isButton1Booked === true
+  } else if(this.isButton2Pressed === true){
+    this.isButton2Booked === true
+  } else if(this.isButton3Pressed === true){
+    this.isButton3Booked === true
+  }
+
   this.newRes.bottles = this.bottlesSelected;
   this.newRes.total = this.tableTotal();
-  console.log(this.newRes)
+  this.newRes.clubInfo = this.currentClub
+  this.updatedStuff.id = id
+  this.updatedStuff.tableAmount = this.currentClub.tableAmount
+  // console.log(id)
+  console.log(this.updatedStuff.tableAmount);
+  this.updatedStuff.tableAmount = this.updatedStuff.tableAmount - 1;
+  console.log(this.updatedStuff.tableAmount);
+  this.club.updateTableAmount(this.updatedStuff)
   this.club.newReservation(this.newRes)
   .subscribe(
     (newResFromApi) => {
 
     }
   )
+  this.routerThing.navigate(['/previously-booked'])
+
 }
 
 }
